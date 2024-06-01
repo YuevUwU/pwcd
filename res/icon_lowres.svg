@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128"
+   height="128"
+   viewBox="0 0 128 128"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   sodipodi:docname="icon_lowres.svg"
+   inkscape:export-filename="icon_16x.png"
+   inkscape:export-xdpi="12"
+   inkscape:export-ydpi="12"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="1.7108849"
+     inkscape:cx="25.717685"
+     inkscape:cy="18.411525"
+     inkscape:window-width="1600"
+     inkscape:window-height="876"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" /><defs
+     id="defs1" /><g
+     inkscape:label="body"
+     inkscape:groupmode="layer"
+     id="layer1"><path
+       style="font-weight:600;font-size:98.4672px;font-family:Saira;-inkscape-font-specification:'Saira Semi-Bold';fill:#ffe166;fill-opacity:1;stroke:none;stroke-width:1.2995;stroke-dasharray:none;stroke-opacity:1"
+       d="M 49.393194,101.66061 V 16.165285 h 39.640998 q 7.953055,0 12.923718,1.988262 5.09492,1.988265 7.82879,5.716259 2.73386,3.603727 3.72798,8.822918 1.11841,5.219191 1.11841,11.805313 0,6.089057 -0.99414,11.308247 -0.86987,5.094927 -3.60373,8.947185 -2.73386,3.852261 -7.95305,5.964791 -5.094923,2.112529 -13.545042,2.112529 H 67.03903 V 101.66061 Z M 67.03903,58.415881 h 14.539177 q 5.343457,0 8.450118,-0.497066 3.106662,-0.621333 4.597858,-2.112531 1.491198,-1.491195 1.863998,-4.225057 0.497066,-2.733864 0.497066,-7.08319 0,-4.349326 -0.497066,-7.083187 -0.3728,-2.733862 -1.863998,-4.22506 -1.36693,-1.615465 -4.349326,-2.11253 -2.982394,-0.621333 -8.201585,-0.621333 H 67.03903 Z"
+       id="text1"
+       aria-label="P"
+       inkscape:label="P(Saira)" /><path
+       style="font-weight:bold;font-size:107.095px;font-family:'Noto Sans CJK TC';-inkscape-font-specification:'Noto Sans CJK TC Bold';fill:#e280ff;fill-opacity:1;stroke:none;stroke-width:1.2995;stroke-dasharray:none;stroke-opacity:1"
+       d="M 67.660759,96.329244 V 16.165285 H 49.393194 V 96.329244 C 43.841287,91.453647 33.991129,85.444182 24.857347,81.248902 L 15.902658,91.453647 C 31.662909,99.277284 47.960443,110.84265 58.526975,121.04741 69.093509,110.84265 85.391041,99.277284 101.15129,91.453647 L 92.196606,81.248902 c -9.133785,4.19528 -18.983941,10.204745 -24.535847,15.080342 z"
+       id="text2"
+       aria-label="↓"
+       inkscape:label="down_arrow(Noto Sans TC)" /></g></svg>

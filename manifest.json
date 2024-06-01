@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Phira Web Chart Downloader (PWCD)",
+    "version": "1.0",
+    "description": "Download charts from Phira Website (phira.moe)",
+    "permissions": ["activeTab"],
+    "host_permissions": ["https://phira.moe/chart/*"],
+    "content_scripts": [
+        {
+            "matches": ["https://phira.moe/chart/*"],
+            "js": ["scripts/content.js"]
+        }
+    ],
+    "action": {
+        "default_icon": {
+            "16": "res/icon_16x.png",
+            "48": "res/icon_48x.png",
+            "128": "res/icon_128x.png"
+        },
+        "default_title": "Phira Web Chart Downloader (PWCD)"
+    }
+}
