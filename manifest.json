@@ -4,10 +4,10 @@
     "version": "1.0",
     "description": "Download charts from Phira Website (phira.moe)",
     "permissions": ["activeTab"],
-    "host_permissions": ["https://phira.moe/chart/*"],
+    "host_permissions": ["https://phira.moe/*"],
     "content_scripts": [
         {
-            "matches": ["https://phira.moe/chart/*"],
+            "matches": ["https://phira.moe/*", "http://localhost:5173/*"],
             "js": ["scripts/content.js"]
         }
     ],
