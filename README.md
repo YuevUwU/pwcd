@@ -17,3 +17,7 @@
 2. Visit [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox)
 3. Click `Load Temporary Add-on...` button
 4. Open the downloaded ZIP file
+
+## ScreenShot
+
+![image](https://github.com/YuevUwU/pwcd/assets/96368079/07aba66a-3de3-4097-b3b2-43d0ae530d11)
