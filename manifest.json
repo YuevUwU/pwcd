@@ -3,6 +3,7 @@
     "name": "Phira Web Chart Downloader (PWCD)",
     "version": "1.0",
     "description": "Download charts from Phira Website (phira.moe)",
+    "permissions": ["storage"],
     "content_scripts": [
         {
             "matches": ["https://phira.moe/*"],

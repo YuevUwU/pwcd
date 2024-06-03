@@ -1,3 +1,16 @@
+i18n = {
+    "download": {
+        "en": "Download",
+        "zh-CN": "下载",
+        "zh-TW": "下載"
+    }
+}
+
+function getTranslation(key, locale) {
+    const translation = i18n[key][locale] || i18n[key]['en'];
+    return translation
+}
+
 async function fetchChart(id) {
     console.log("Fetching Phira API...");
     try {
@@ -18,10 +31,12 @@ async function fetchChart(id) {
 
 function createDownloadButton(chartId) {
     const button = document.createElement("button");
-    button.textContent = "下载";
     button.className = "btn btn-secondary base-content";
     button.style.cssText =
-        "border-color: hsl(var(--pf)); background-color: hsl(var(--pf)); outline-color: hsl(var(--pf)); color: white;";
+    "border-color: hsl(var(--pf)); background-color: hsl(var(--pf)); outline-color: hsl(var(--pf)); color: white;";
+
+    locale = localStorage.getItem('locale')
+    button.textContent = getTranslation("download", locale)
 
     button.addEventListener("click", async () => {
         const chartUrl = await fetchChart(chartId);
