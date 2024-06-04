@@ -18,6 +18,9 @@
 3. Click `Load Temporary Add-on...` button
 4. Open the downloaded ZIP file
 
+> [!IMPORTANT]
+> The extension installs and remains installed until you remove it or restart Firefox.
+
 ## ScreenShot
 
 ![image](https://github.com/YuevUwU/pwcd/assets/96368079/07aba66a-3de3-4097-b3b2-43d0ae530d11)
