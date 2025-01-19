@@ -1,14 +1,14 @@
 i18n = {
-    "download": {
-        "en": "Download",
+    download: {
+        en: "Download",
         "zh-CN": "下载",
-        "zh-TW": "下載"
-    }
-}
+        "zh-TW": "下載",
+    },
+};
 
 function getTranslation(key, locale) {
-    const translation = i18n[key][locale] || i18n[key]['en'];
-    return translation
+    const translation = i18n[key][locale] || i18n[key]["en"];
+    return translation;
 }
 
 async function fetchChart(id) {
@@ -33,10 +33,10 @@ function createDownloadButton(chartId) {
     const button = document.createElement("button");
     button.className = "btn btn-secondary base-content";
     button.style.cssText =
-    "border-color: hsl(var(--pf)); background-color: hsl(var(--pf)); outline-color: hsl(var(--pf)); color: white;";
+        "border-color: hsl(var(--pf)); background-color: hsl(var(--pf)); outline-color: hsl(var(--pf)); color: white;";
 
-    locale = localStorage.getItem('locale')
-    button.textContent = getTranslation("download", locale)
+    locale = localStorage.getItem("locale");
+    button.textContent = getTranslation("download", locale);
 
     button.addEventListener("click", async () => {
         const chartUrl = await fetchChart(chartId);
@@ -51,7 +51,7 @@ function injectDownloadButton(chartId) {
     const downloadButton = createDownloadButton(chartId);
     const containerSelector =
         "#app > div > div > div.flex.flex-col.items-center.-mt-\\[35vh\\].mb-24 > div";
-        
+
     // TODO: reuse or remove existing flex
     const titleSelector = `${containerSelector} > div > div > h1.text-5xl.font-black`;
 
@@ -74,7 +74,9 @@ function injectDownloadButton(chartId) {
 
                 console.debug("Button injected successfully");
             } else {
-                console.debug("Button have been injected or titleElement not found")
+                console.debug(
+                    "Button have been injected or titleElement not found"
+                );
             }
         } else {
             console.debug("Wait for chart info...");
