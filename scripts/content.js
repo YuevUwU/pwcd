@@ -6,9 +6,16 @@ i18n = {
     },
 };
 
-function getTranslation(key, locale) {
-    const translation = i18n[key][locale] || i18n[key]["en"];
-    return translation;
+const containerSelector =
+    "#app > div > div > div.flex.flex-col.items-center.-mt-\\[35vh\\].mb-24 > div";
+const infoSelector = `${containerSelector} > div > div`;
+const titleSelector = `${infoSelector} > h1.text-5xl.font-black`;
+const buttonSelector = `${containerSelector} > div > div.flex.flex-row > button`;
+const chartCardSelector =
+    "#app > div > div > div.mx-8.lg\\:w-3\\/4 > div.mt-6.grid.gap-4.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3.xl\\:grid-cols-4.min-h-0.min-w-0 a div";
+
+function isButtonExists() {
+    return document.querySelector(buttonSelector);
 }
 
 async function fetchChart(id) {
@@ -27,6 +34,11 @@ async function fetchChart(id) {
         console.error("Error fetching chart data:", error);
         return null;
     }
+}
+
+function getTranslation(key, locale) {
+    const translation = i18n[key][locale] || i18n[key]["en"];
+    return translation;
 }
 
 function createDownloadButton(chartId) {
@@ -49,53 +61,49 @@ function createDownloadButton(chartId) {
 
 function injectDownloadButton(chartId) {
     const downloadButton = createDownloadButton(chartId);
-    const containerSelector =
-        "#app > div > div > div.flex.flex-col.items-center.-mt-\\[35vh\\].mb-24 > div";
 
     // TODO: reuse or remove existing flex
-    const titleSelector = `${containerSelector} > div > div > h1.text-5xl.font-black`;
 
     const intervalID = setInterval(() => {
+        const infoElement = document.querySelector(infoSelector);
         const titleElement = document.querySelector(titleSelector);
-        const infoElement = document.querySelector(
-            `${containerSelector} > div > div`
-        );
-        if (infoElement) {
+        if (!infoElement) {
+            console.debug("Wait for chart info...");
+        } else if (isButtonExists()) {
+            console.debug("Button have been injected");
             clearInterval(intervalID);
-            if (titleElement) {
-                titleElement.className = "text-5xl font-black grow";
+        } else if (!titleElement) {
+            console.debug("titleElement not found");
+        } else {
+            console.debug("Ready to inject button");
+            clearInterval(intervalID);
+            titleElement.className = "text-5xl font-black grow";
 
-                const flexRowDiv = document.createElement("div");
-                flexRowDiv.className = "flex flex-row";
+            const flexRowDiv = document.createElement("div");
+            flexRowDiv.className = "flex flex-row";
+
+            if (!isButtonExists()) {
                 flexRowDiv.appendChild(titleElement);
                 flexRowDiv.appendChild(downloadButton);
-
                 infoElement.insertAdjacentElement("beforebegin", flexRowDiv);
-
                 console.debug("Button injected successfully");
             } else {
-                console.debug(
-                    "Button have been injected or titleElement not found"
-                );
+                console.debug("Button have been injected");
             }
-        } else {
-            console.debug("Wait for chart info...");
         }
     }, 100);
 }
 
 function checkAndInjectButton() {
     const chartId = window.location.pathname.split("/chart/")[1];
-    if (chartId) {
-        const buttonExists = document.querySelector(
-            "#app > div > div > div.flex.flex-col.items-center.-mt-\\[35vh\\].mb-24 > div > div > div.flex.flex-row > button"
-        );
-        if (!buttonExists) {
-            console.debug("Chart ID:", chartId);
-            injectDownloadButton(chartId);
-        } else {
-            console.debug("Skip because the button exists");
-        }
+    if (!chartId) {
+        return;
+    }
+    if (!isButtonExists()) {
+        console.debug("Chart ID:", chartId);
+        injectDownloadButton(chartId);
+    } else {
+        console.debug("Skip because the button exists");
     }
 }
 
@@ -111,8 +119,6 @@ function initializeObserver() {
 }
 
 function addCardClickListener() {
-    const chartCardSelector =
-        "#app > div > div > div.mx-8.lg\\:w-3\\/4 > div.mt-6.grid.gap-4.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3.xl\\:grid-cols-4.min-h-0.min-w-0 a div";
     const elements = document.querySelectorAll(chartCardSelector);
 
     elements.forEach((element) => {
