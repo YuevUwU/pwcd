@@ -51,7 +51,9 @@ function injectDownloadButton(chartId) {
     const downloadButton = createDownloadButton(chartId);
     const containerSelector =
         "#app > div > div > div.flex.flex-col.items-center.-mt-\\[35vh\\].mb-24 > div";
-    const titleSelector = `${containerSelector} > div > h1.text-5xl.font-black`;
+        
+    // TODO: reuse or remove existing flex
+    const titleSelector = `${containerSelector} > div > div > h1.text-5xl.font-black`;
 
     const intervalID = setInterval(() => {
         const titleElement = document.querySelector(titleSelector);
