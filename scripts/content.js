@@ -21,13 +21,13 @@ function isButtonExists() {
 async function fetchChart(id) {
     console.log("Fetching Phira API...");
     try {
-        const response = await fetch(`https://api.phira.cn/chart/${id}`);
+        const response = await fetch(`https://phira.5wyxi.com/chart/${id}`);
         if (!response.ok) throw new Error("Failed to fetch chart data");
         const data = await response.json();
         console.log("Phira API Response:", data);
 
         const filename = data.file.split("/files/")[1];
-        const downloadUrl = `https://files-cf.phira.cn/${filename}`;
+        const downloadUrl = `https://api.phira.cn/files/${filename}`;
         console.log("Download Link: ", downloadUrl);
         return downloadUrl;
     } catch (error) {
