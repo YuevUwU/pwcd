@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Phira Web Chart Downloader (PWCD)
 // @namespace    https://yuevuwu.github.io
-// @version      1.3-pre0
+// @version      2.0
 // @icon         https://github.com/YuevUwU/pwcd/raw/refs/heads/tampermonkey/res/icon_lowres.svg
 // @icon64         https://github.com/YuevUwU/pwcd/raw/refs/heads/tampermonkey/res/icon.svg
 // @description  Download charts from Phira Website (phira.moe)
