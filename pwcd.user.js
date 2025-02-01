@@ -32,7 +32,7 @@ function isButtonExists() {
     return document.querySelector(buttonSelector);
 }
 
-const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
+const CORS_PROXY = "https://corsproxy.io/?url=";
 
 async function fetchChart(chartId) {
     console.log("Fetching Phira API...");
