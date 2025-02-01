@@ -3,24 +3,21 @@
 <p align="center"><img src="res/icon.svg" /></p>
 <p align="center">Phira Web Chart Downloader</p>
 
+## Feature
+
+- Add a `Download` button to download chart from `phira.moe`.
+- Rename the chart file to a more clearer name. (with CORS proxy)
+
 ## Install
 
-### Chrome
-
-1. Download the [CRX file](https://github.com/YuevUwU/pwcd/releases/latest/download/pwcd.crx)
-2. Visit [chrome://extensions/](chrome://extensions/)
-3. Drag the CRX file there
-
-### Firefox
-
-1. Download the [ZIP file](https://github.com/YuevUwU/pwcd/releases/latest/download/pwcd.zip)
-2. Visit [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox)
-3. Click `Load Temporary Add-on...` button
-4. Open the downloaded ZIP file
-
-> [!IMPORTANT]
-> The extension installs and remains installed until you remove it or restart Firefox.
+1. Install TamperMonkey by visiting [this link](https://www.tampermonkey.net/).
+2. Click [this URL](https://github.com/YuevUwU/pwcd/raw/refs/heads/tampermonkey/pwcd.user.js).
+3. You will be redirected to the TamperMonkey extension page. Click the `Install` button.
+4. Search for and visit the chart at https://phira.moe.
+5. Press the `DOWNLOAD` button on the chart page.
+6. TamperMonkey will prompt you to grant access to a CORS proxy. Confirm by selecting any "Allow" option. If it times out, repeat step 2 to reinstall the script.
+7. Done!
 
 ## ScreenShot
 
-![image](https://github.com/YuevUwU/pwcd/assets/96368079/07aba66a-3de3-4097-b3b2-43d0ae530d11)
+![image](res/screenshot.png)
