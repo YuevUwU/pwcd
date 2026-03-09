@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Phira Web Chart Downloader (PWCD)
 // @namespace    https://yuevuwu.github.io
-// @version      2.0
+// @version      1.3-pre0
 // @icon         https://github.com/YuevUwU/pwcd/raw/refs/heads/tampermonkey/res/icon_lowres.svg
 // @icon64         https://github.com/YuevUwU/pwcd/raw/refs/heads/tampermonkey/res/icon.svg
 // @description  Download charts from Phira Website (phira.moe)
@@ -9,6 +9,9 @@
 // @match        *://phira.moe/*
 // @copyright    CC0 1.0 Universal
 // @grant        GM_xmlhttpRequest
+// @connect      phira.5wyxi.com
+// @connect      api.phira.cn
+// @connect      phira-cdn.5wyxi.com
 // ==/UserScript==
 
 const i18n = {
@@ -80,7 +83,7 @@ async function downloadChart(chartId) {
         try {
             GM_xmlhttpRequest({
                 method: "GET",
-                url: CORS_PROXY + chartUrl,
+                url: chartUrl,
                 responseType: "blob",
                 onload: function (response) {
                     const blob = new Blob([response.response], {
